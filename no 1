@@ -1,0 +1,71 @@
+#include<stdio.h>
+#include<stdlib.h>
+#define MAXQUEUE 3
+
+typedef struct{
+int count;
+int front;
+int rear;
+int item[MAXQUEUE];
+
+} QUEUE;
+
+QUEUE antrean;
+
+void inisialisasi(QUEUE *Q){
+Q->count=0;
+Q->front=0;
+Q->rear=3;
+}
+
+int isEmpty(QUEUE *Q){
+int hasil=0;
+if (Q->count==0){
+hasil=1;
+}
+return hasil;
+}
+
+int isFull(QUEUE *Q){
+int hasil=0;
+if (Q->count==MAXQUEUE){
+hasil=1;
+}
+
+return hasil;
+}
+
+void insert(QUEUE *Q, int data){
+ if (isFull(&antrian)==1){
+        printf("maaf sudah full");
+    }else{
+        Q->item[Q->rear]=data;
+        Q->rear=(Q->rear+1)%MAXQUEUE;
+        ++(Q->count);
+    }
+
+void hapus(QUEUE *Q){
+// TODO 2 //
+}
+
+void printQueue(QUEUE *Q){
+//TODO 3 //
+}
+
+int main(){
+inisialisasi(&antrean);
+
+// Insert mahasiswa pertama //
+// Insert mahasiswa kedua //
+// Insert mahasiswa ketiga //
+// Hapus mahasiswa pertama //
+
+// Insert mahasiswa keempat //
+
+// contoh
+// printf("masukan xx\n");
+// insert(&abcde, yy);
+// printQueue(&12345);
+
+return 0;
+}
